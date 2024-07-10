@@ -12,6 +12,7 @@ steps:
         echo "Step 1: obtaining cluster credentials..."
         gcloud container clusters get-credentials k8s-vedant-container --zone us-central1-c --project ${PROJECT_ID}
 
+
   - id: Build
     name: "gcr.io/cloud-builders/docker"
     entrypoint: "bash"
@@ -19,7 +20,7 @@ steps:
       - "-c"
       - |
         echo "Step 2: Building Docker image..."
-        docker build -t https://us-central1-docker.pkg.dev//${PROJECT_ID}/k8s-vedant/k8-container1:${SHORT_SHA} -t us-central1-docker.pkg.dev/${PROJECT_ID}/k8s-vedant/k8-container1:latest .
+        docker build -t us-central1-docker.pkg.dev/${PROJECT_ID}/k8s-vedant/k8-container1:${SHORT_SHA} -t us-central1-docker.pkg.dev/${PROJECT_ID}/k8s-vedant/k8-container1:latest .
         echo "Docker image built successfully."
 
   - id: Push
@@ -29,7 +30,7 @@ steps:
       - "-c"
       - |
         echo "Step 3: Pushing Docker image..."
-        docker push --all-tags https://us-central1-docker.pkg.dev/${PROJECT_ID}/k8s-vedant/k8-container1
+        docker push --all-tags us-central1-docker.pkg.dev/${PROJECT_ID}/k8s-vedant/k8-container1
         echo "Image pushed successfully."
 
   - id: Update GKE
@@ -43,5 +44,5 @@ steps:
         kubectl set image deployment/container1-deployment k8s-container1=us-central1-docker.pkg.dev/${PROJECT_ID}/k8s-vedant/k8-container1:${SHORT_SHA}
         echo "Image updated successfully."
     env:
-      - 'CLOUDSDK_COMPUTE_REGION=us-east1-b'
+      - 'CLOUDSDK_COMPUTE_REGION=us-central1-c'
       - 'CLOUDSDK_CONTAINER_CLUSTER=k8s-vedant-container'
