@@ -24,7 +24,7 @@ console.log("testing cicd 7 ..")
 console.log("cicd testing.33344444333333334443............")
 console.log("cicd testing.33344444333333334443 non functional............")
 console.log("cicd testing.33344444333333334443 non functional1............")
-console.log("cicd testing.33344444333333334443 non functional6............")
+console.log("cicd testing.33344444333333334443 non functional7............")
 
 
 
