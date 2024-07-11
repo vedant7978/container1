@@ -20,6 +20,8 @@ console.log("testing cicd 3 ..")
 console.log("testing cicd 4 ..")
 console.log("testing cicd 5 ..")
 console.log("testing cicd 6 ..")
+console.log("testing cicd 7 ..")
+
 
 
 const parseFile = async (file, product) => {
