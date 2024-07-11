@@ -41,6 +41,7 @@ steps:
       - |
         echo "Step 4: Updating pod by setting new image...."
         echo "${PROJECT_ID}"
+        kubectl get deployment container1-deployment || kubectl apply -f deployment-container1.yaml
         kubectl set image deployment/container1-deployment k8s-container1=us-central1-docker.pkg.dev/${PROJECT_ID}/k8s-vedant/k8-container1:${SHORT_SHA}
         echo "Image updated successfully."
     env:
