@@ -14,7 +14,7 @@ const CONTAINER_2_ENDPOINT = process.env.CONTAINER_2_ENDPOINT || "http://localho
 const FILE_DIRECTORY = process.env.FILE_DIRECTORY || "../";
 
 console.log({PORT})
-console.log("CICD testing........");
+console.log("CICD testing_1........");
 
 const parseFile = async (file, product) => {
     try {
