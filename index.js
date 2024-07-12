@@ -15,18 +15,6 @@ const FILE_DIRECTORY = process.env.FILE_DIRECTORY || "../";
 
 console.log({PORT})
 console.log("CICD testing........");
-console.log("cicd cicd")
-console.log("testing cicd 3 ..")
-console.log("testing cicd 4 ..")
-console.log("testing cicd 5 ..")
-console.log("testing cicd 6 ..")
-console.log("testing cicd 7 ..")
-console.log("cicd testing.33344444333333334443............")
-console.log("cicd testing.33344444333333334443 non functional............")
-console.log("cicd testing.33344444333333334443 non functional1............")
-console.log("cicd testing.33344444333333334443 non functional9............")
-
-
 
 const parseFile = async (file, product) => {
     try {
